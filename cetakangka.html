@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
 </head>
+
 <body>
-    <h1>Cetak Angka</h1>
+  <h1>Cetak Angka</h1>
+  
+  <input type="number" id="jumlah" placeholder="masukan jumlah angka" />
+  <button onclick="cetak()">cetak</button>
+  <button onclick="cetakMundur()">cetakmundur</button>
+  <div id="hasil"></div>
+  
+  <script>
+    function cetak() {
+      // ambil jumlah dari infut
+      const jumlah = Number(document.getElementById('jumlah').value)
+      
+      //buat variabel hasil
+      let hasil = ''
+      
+      //lakukan perluangan dari 1 sampai jumlah 
+      for (let i = 1; i <= jumlah; i++) {
+        hasil += i + '<br>'
+      }
+      //tampilkan hasil di elemen div dengan id "hasil"
+      document.getElementById('hasil').innerHTML = hasil
+    }
     
-    <input type="number" id="jumlah" placeholder="masukan jumlah angka"/>
-<button onclick="cetak()">cetak</button>
-     
-     <div id="hasil"></div>
-     
-     <script>
-       function cetak(){
-         // ambil jumlah dari infut
-         const jumlah= Number(document.getElementById('jumlah'). value)
-         
-         //buat variabel hasil
-         let hasil =''
-         
-         //lakukan perluangan dari 1 sampai jumlah 
-         for (let i = 1; i<= jumlah; i++) {
-           hasil+= i+ '<br>'
-           }
-           //tampilkan hasil di elemen div dengan id "hasil"
-           document.getElementById('hasil').innerHTML = hasil
-       }
-     </script>
+    function cetakMundur() {
+      const jumlah = Number(document.getElementById('jumlah').value)
+      
+      let hasil = ''
+      //perulangan mundur dari jumlah sampai 1
+      for (let i = jumlah; i >= 1; i--) {
+        hasil += i + '<br>'
+      }
+      document.getElementById('hasil').innerHTML = hasil
+    }
+  </script>
 </body>
+
 </html>
